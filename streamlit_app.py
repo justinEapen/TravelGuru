@@ -50,7 +50,7 @@ def main():
             
             st.image("images/travel.jpg", use_container_width=True)
             st.subheader("📜 Your Travel Itinerary:")
-          st.markdown(response)
+            st.markdown(response)
             
             col1, col2 = st.columns(2)
             with col1:
