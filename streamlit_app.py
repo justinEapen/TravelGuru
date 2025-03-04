@@ -5,7 +5,7 @@ from PIL import Image
 co = cohere.Client('18V1Oo06GAf0xMaXbBjkHlhdHktqbjc5tusZHZMV')  # Replace with your actual API key
 
 st.set_page_config(page_title="Smart Travel Planner")
-st.image("images/beach.jpg", use_container_width=True)
+#st.image("images/beach.jpg", use_container_width=True)
 st.title("✈️ Your Personalized Travel Itinerary 🌍")
 
 preamble_prompt = """
@@ -50,7 +50,17 @@ def main():
             
             st.image("images/travel.jpg", use_container_width=True)
             st.subheader("📜 Your Travel Itinerary:")
-            st.markdown(response)
+          st.markdown(response)
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.write("✅ Is this itinerary good for you?")
+                if st.button("Yes, it's perfect! 🎉"):
+                    st.success("Great! Have a wonderful trip! ✈️")
+            with col2:
+                st.write("🔄 Need any changes?")
+                if st.button("Modify Itinerary 📝"):
+                    st.warning("Please specify the changes you'd like to make.")
             
             st.session_state.messages.append({"role": "User", "message": user_prompt})
             st.session_state.messages.append({"role": "Chatbot", "message": response})
