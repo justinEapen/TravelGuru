@@ -60,7 +60,7 @@ def main():
             with col2:
                 st.write("🔄 Need any changes?")
                 if st.button("Modify Itinerary 📝"):
-                    st.warning("Please specify the changes you'd like to make.")
+                    st.info("Chat with the bot below to refine your itinerary!")
             
             st.session_state.messages.append({"role": "User", "message": user_prompt})
             st.session_state.messages.append({"role": "Chatbot", "message": response})
