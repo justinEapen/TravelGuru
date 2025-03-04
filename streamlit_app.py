@@ -61,9 +61,8 @@ def main():
                 st.write("🔄 Need any changes?")
                 if st.button("Modify Itinerary 📝"):
                     st.info("Chat with the bot below to refine your itinerary!")
-            
-            st.session_state.messages.append({"role": "User", "message": user_prompt})
-            st.session_state.messages.append({"role": "Chatbot", "message": response})
+                    st.session_state.messages.append({"role": "User", "message": user_prompt})
+                    st.session_state.messages.append({"role": "Chatbot", "message": response})
         else:
             st.warning("⚠️ Please fill in all required fields.")
 
