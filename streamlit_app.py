@@ -5,7 +5,7 @@ from PIL import Image
 co = cohere.Client('18V1Oo06GAf0xMaXbBjkHlhdHktqbjc5tusZHZMV')  # Replace with your actual API key
 
 st.set_page_config(page_title="Smart Travel Planner")
-st.image("https://cdn.pixabay.com/photo/2016/11/29/06/17/beach-1867285_1280.jpg", use_container_width=True)
+st.image("images/beach.jpg", use_container_width=True)
 st.title("✈️ Your Personalized Travel Itinerary 🌍")
 
 preamble_prompt = """
@@ -33,7 +33,7 @@ def main():
     initialize_state()
 
     st.write("## 🌴 Plan your perfect trip effortlessly! 🌟")
-    st.image("https://cdn.pixabay.com/photo/2015/09/18/19/03/africa-949666_1280.jpg", use_container_width=True)
+    st.image("images/africa.jpg", use_container_width=True)
     
     destination = st.text_input("🏙️ Enter your destination:")
     start_date = st.date_input("📅 Start date:")
@@ -48,7 +48,7 @@ def main():
             
             response = cohereReply(user_prompt)
             
-            st.image("https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg", use_container_width=True)
+            st.image("images/travel.jpg", use_container_width=True)
             with st.expander("📜 Your Travel Itinerary:"):
                 st.markdown(response)
             
