@@ -50,7 +50,7 @@ def main():
             
             st.image("images/travel.jpg", use_container_width=True)
             st.subheader("📜 Your Travel Itinerary:")
-        st.markdown(response)
+            st.markdown(response)
             
             st.session_state.messages.append({"role": "User", "message": user_prompt})
             st.session_state.messages.append({"role": "Chatbot", "message": response})
